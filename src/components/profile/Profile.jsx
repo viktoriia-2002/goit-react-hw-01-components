@@ -1,6 +1,6 @@
 import ProfileItem from '../profileItem'
 
-const Profile = (props) => {
+const Profile = () => {
   return <ProfileItem />;
 };
 
