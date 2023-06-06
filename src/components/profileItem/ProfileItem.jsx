@@ -1,19 +1,20 @@
 import PropTypes from 'prop-types';
 import user from '../user.json';
+import { Description } from './Profileitem.styled';
 
 const ProfileItem = ({ username, tag, location, avatar, stats }) => {
   return (
     <div className="profile">
-      <div className="description">
+      <Description className="description">
         <img
           src={avatar}
-          alt="User avatar"
+          alt="User avatar" width = "80px" height = "80px"
           className="avatar"
         />
         <p className="name">{username}</p>
         <p className="tag">{tag}</p>
         <p className="location">{location}</p>
-      </div>
+      </Description>
 
       <ul className="stats">
         <li>
