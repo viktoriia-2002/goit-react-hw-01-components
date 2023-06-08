@@ -1,14 +1,16 @@
 import PropTypes from 'prop-types';
 import user from '../user.json';
-import { Description } from './Profileitem.styled';
+import { ProfileEl, Description, Stats, ListItem, Quantity, Avatar} from './Profileitem.styled';
 
 const ProfileItem = ({ username, tag, location, avatar, stats }) => {
   return (
-    <div className="profile">
+    <ProfileEl className="profile">
       <Description className="description">
-        <img
+        <Avatar
           src={avatar}
-          alt="User avatar" width = "80px" height = "80px"
+          alt="User avatar"
+          width="80px"
+          height="80px"
           className="avatar"
         />
         <p className="name">{username}</p>
@@ -16,35 +18,37 @@ const ProfileItem = ({ username, tag, location, avatar, stats }) => {
         <p className="location">{location}</p>
       </Description>
 
-      <ul className="stats">
-        <li>
+      <Stats className="stats">
+        <ListItem className="listItem">
           <span className="label">Followers</span>
-          <span className="quantity">{stats.followers}</span>
-        </li>
-        <li>
+          <Quantity className="quantity">{stats.followers}</Quantity>
+        </ListItem>
+        <ListItem className="listItem">
           <span className="label">Views</span>
-          <span className="quantity">{stats.views}</span>
-        </li>
-        <li>
+          <Quantity className="quantity">{stats.views}</Quantity>
+        </ListItem>
+        <ListItem className="listItem">
           <span className="label">Likes</span>
-          <span className="quantity">{stats.likes}</span>
-        </li>
-      </ul>
-    </div>
+          <Quantity className="quantity">{stats.likes}</Quantity>
+        </ListItem>
+      </Stats>
+    </ProfileEl>
   );
 };
 
 const Profile = () => {
-    const { username, tag, location, avatar, stats } = user;
-  
-    return <ProfileItem
+  const { username, tag, location, avatar, stats } = user;
+
+  return (
+    <ProfileItem
       username={username}
       tag={tag}
       location={location}
       avatar={avatar}
       stats={stats}
-    />;
-  };
+    />
+  );
+};
 
 ProfileItem.propTypes = {
   username: PropTypes.string.isRequired,
@@ -57,7 +61,5 @@ ProfileItem.propTypes = {
     likes: PropTypes.number.isRequired,
   }).isRequired,
 };
-
-
 
 export default Profile;
