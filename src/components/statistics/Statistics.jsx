@@ -1,8 +1,7 @@
 import React from 'react';
 import StatisticsItem from '../statisticsItem';
-import data from '../data.json';
 
-const Statistics = () => {
+const Statistics = ({data}) => {
   return (
     <div>
       <StatisticsItem title="Upload stats" data={data} />

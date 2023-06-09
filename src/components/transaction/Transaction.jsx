@@ -1,11 +1,10 @@
 import React from 'react';
 import TransactionHistory from '../transactionHistory'
-import transactions from '../transactions.json';
 
-const Transaction = () => {
+const Transaction = ({transactions}) => {
     return (
         <div>
-            <TransactionHistory data={transactions}/>
+            <TransactionHistory transactions={transactions}/>
         </div>
     )
 }

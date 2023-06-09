@@ -1,12 +1,11 @@
 import React from 'react';
 import FriendListItem from '../friendListItem';
-import friends from '../friends.json';
 
 
-const FriendList = () => {
+const FriendList = ({friends}) => {
     return (
         <ul className="friend-list">
-            <FriendListItem data={friends}/>
+            <FriendListItem friends={friends}/>
       </ul>
     );
   };

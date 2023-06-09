@@ -9,10 +9,10 @@ import {
   Status,
 } from './FriendListItem.styled';
 
-const FriendListItem = ({ data }) => {
+const FriendListItem = ({ friends }) => {
   return (
     <List>
-      {data.map(friendItemEl => (
+      {friends.map(friendItemEl => (
         <ListItem key={friendItemEl.id} className="item">
           <Status className={friendItemEl.isOnline ? 'active' : 'inactive'} />{' '}
           <SpanItem className="status" />
@@ -30,7 +30,7 @@ const FriendListItem = ({ data }) => {
 };
 
 FriendListItem.propTypes = {
-  data: PropTypes.arrayOf(
+  friends: PropTypes.arrayOf(
     PropTypes.shape({
       avatar: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,

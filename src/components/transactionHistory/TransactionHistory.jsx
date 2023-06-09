@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import {TableEl, TdEl, ThEl, RowEl,TrEl } from './transactionHistory.styled';
 
-const TransactionHistory = ({ data }) => {
+const TransactionHistory = ({ transactions }) => {
   return (
     <TableEl className="transaction-history">
       <thead>
@@ -13,7 +13,7 @@ const TransactionHistory = ({ data }) => {
       </thead>
 
       <tbody>
-        {data.map(TransactionHistoryEl => (
+        {transactions.map(TransactionHistoryEl => (
           <TrEl key={TransactionHistoryEl.id}>
             <TdEl>{TransactionHistoryEl.type}</TdEl>
             <TdEl>{TransactionHistoryEl.amount}</TdEl>
@@ -26,7 +26,7 @@ const TransactionHistory = ({ data }) => {
 };
 
 TransactionHistory.propTypes = {
-  data: PropTypes.arrayOf(
+  transactions: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       type: PropTypes.string.isRequired,
