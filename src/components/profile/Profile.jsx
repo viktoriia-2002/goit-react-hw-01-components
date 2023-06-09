@@ -1,8 +1,8 @@
 import ProfileItem from '../profileItem';
 import user from '../user.json';
 
-const Profile = () => {
-  return <ProfileItem data={[user]} />;
+const Profile = (user) => {
+  return <ProfileItem user={user} />;
 };
 
 export default Profile;
